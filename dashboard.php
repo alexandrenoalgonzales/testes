@@ -1,3 +1,7 @@
+<div class="nav">
+            <a href="index.php">Sair</a>
+        </div>
+
 <?php
 
 require 'classes/login.php';

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require 'classes/login.php';
 
@@ -9,10 +9,12 @@ use classes\login;
 <html>
 <head>
     <title>Login</title>
-</head>
+        
+</head>    
 <body>
-    <h4>Entrar</h4>
-    <form action="dashboard.php">
+    <h4>Bem vindo</h4>
+    <div class="form">
+        <form action="dashboard.php">
         <div>
             <label>Usuário</label>
             <input type="txt" method="GET" name="user">
@@ -24,6 +26,8 @@ use classes\login;
         <div>
             <input type="submit" value="Entrar">
         </div>
-        
+        </form>
+    </div>
 </body>
 </html>
+
