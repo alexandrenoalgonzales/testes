@@ -8,5 +8,5 @@ $senha = $_POST['senha'] ?? '';
 
 $login = new Login($user, $senha);
 echo $login->Logar();
-var_dump($login)
+//var_dump($login)
 ?>
