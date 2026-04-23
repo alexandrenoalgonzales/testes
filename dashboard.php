@@ -1,16 +1,12 @@
-<div class="nav">
-            <a href="index.php">Sair</a>
-        </div>
-
 <?php
 
 require 'classes/login.php';
+use classes\Login;
 
-use classes\login;
+$user = $_POST['user'] ?? '';
+$senha = $_POST['senha'] ?? '';
 
-$login = new Login();
-$login->user =$_GET['user'];
-$login->senha =$_GET['senha'];
-$login->Logar();
-
+$login = new Login($user, $senha);
+echo $login->Logar();
+var_dump($login)
 ?>

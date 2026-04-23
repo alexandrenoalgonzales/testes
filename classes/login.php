@@ -2,19 +2,24 @@
 
 namespace classes;
 
-class Login {
+class Login{
 
-    public $user;
-    public $senha;
+    private $user;
+    private $senha;
+
+    public function __construct($userInformado, $senhaInformada) {
+        $this->user = $userInformado;
+        $this->senha = $senhaInformada;
+    } 
 
     public function Logar() {
         if($this->user == "ale" and $this->senha == "123"):
-            echo $user." Logado com sucesso";
+            return $this->user . " Logado com sucesso";
         else:
-            echo "Dados inválidos";
+            return "Dados inválidos";
         endif;
     }
-
+    
 }
 
 ?>
