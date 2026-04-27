@@ -1,12 +1,20 @@
 <?php
 
-require 'classes/login.php';
-use classes\Login;
+class User {
 
-$user = $_POST['user'] ?? '';
-$senha = $_POST['senha'] ?? '';
+    public $nome;
 
-$login = new Login($user, $senha);
-echo $login->Logar();
-//var_dump($login)
+    public function getNome() {
+        return $this->nome;
+    }
+
+    public function setNome($n) {
+        return $this->nome = $n;
+    }
+
+}
+
+$nome = new User();
+$nome->setNome("alexandreNoal");
+echo $nome->getNome();
 ?>

@@ -7,7 +7,7 @@
     } 
 
 
-    <?php
+<?php
 
 namespace classes;
 
