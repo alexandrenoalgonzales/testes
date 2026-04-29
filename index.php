@@ -14,40 +14,42 @@ class Produto {
         return $this->nome;
     }
 
-    public function setNome($nome) {
-        return $this->nome = $nome;
-    }
-
     public function getPreco() {
         return $this->preco;
     }
-
-    public function setPreco($preco) {
-        return $this->preco = $preco;
-    }
-
-    public function Exibir() {
-        echo "Produto: " . $this->name;
-    }
-
+    
 }
 
 class Carrinho {
 
     private $itens = [];
 
-    public function adicionar($itens) {
-        $this->$itens = $itens;
+    public function adicionar(Produto $produto) {
+        $this->itens[] = $produto;
     }
 
-    public function exibirLista(){
-        
+    public function exibirLista() {
+        foreach ($this->itens as $item) {
+            echo "" . $item->getNome() . ": R$ " . $item->getPreco() . "\n";
+        }   
+    }
+
+    public function calcularTotal() {
+        $total = 0;
+        foreach ($this->itens as $item) {
+            $total += $item->getPreco();
+        }
+        return $total;
     }
 
 }
 $p1 = new Produto('maça', 2);
 $p2 = new PRoduto('banana', 1);
 
-$c = new Carrinho($p1, $p2);
-var_dump($c);
+$c = new Carrinho();
+$c->adicionar($p1);
+$c->adicionar($p2);
+$c->exibirLista();
+echo "Total: R$ " . $c->calcularTotal();
+//var_dump($c);
 ?>
